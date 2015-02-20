@@ -37,4 +37,17 @@ class TopController < ApplicationController
     Review.create(review: params[:review],rate: params[:rate], nickname: params[:nickname],lesson_id: params[:lesson_id])
     redirect_to action: :entry
   end
+
+  def callback
+    # auth = request.env["omniauth.auth"]
+    # user = User.find_by_provider_and_uid(auth["provider"],auth["uid"] || User.create_with_omniauth(auth))
+    # session[:user_id]=user.id
+    auth = request.env["omniauth.auth"]
+    user = User.find_by(provider: auth["provider"], uid: auth["uid"]) || User.create_with_omniauth(auth)
+    # binding.pry
+    sign_in(:user, user)
+    session[:user_id] = user.id
+    # binding.pry
+    redirect_to action: :index, notice: 'ログインしました' 
+  end
 end

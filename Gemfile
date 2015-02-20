@@ -47,4 +47,5 @@ gem 'twitter-bootstrap-rails' # Bootstrapの本体
 gem 'paperclip'
 gem 'carrierwave'
 gem 'devise'
-
+gem 'omniauth-twitter'
+gem 'omniauth'
