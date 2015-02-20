@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
                 email: User.create_unique_email,
                 password: Devise.friendly_token[0,20]
                 )
-    binding.pry
+    # binding.pry
 
 
   end

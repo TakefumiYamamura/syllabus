@@ -44,7 +44,7 @@ class TopController < ApplicationController
     # session[:user_id]=user.id
     auth = request.env["omniauth.auth"]
     user = User.find_by(provider: auth["provider"], uid: auth["uid"]) || User.create_with_omniauth(auth)
-    # binding.pry
+     # binding.pry
     sign_in(:user, user)
     session[:user_id] = user.id
     # binding.pry
