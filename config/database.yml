@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: syllabus_production
-  username: syllabus
-  password: <%= ENV['SYLLABUS_DATABASE_PASSWORD'] %>
+  # username: syllabus
+  # password: <%= ENV['SYLLABUS_DATABASE_PASSWORD'] %>
