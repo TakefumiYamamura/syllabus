@@ -63,7 +63,7 @@
           <ul class="user__info">
             <li>
               <a href="/users/<%=current_user.id %>">マイページ</a>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              <%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
             </li>
           </ul>
         </span>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get "/users/auth/:provider/callback" =>'top#callback'
-  get "/logout" =>'sessions#destroy', :as  =>:logout 
+  # get "/logout" =>'sessions#destroy', :as  =>:logout
   devise_for :users
   root 'top#index'
   get 'top' => 'top#index'
